@@ -9,9 +9,7 @@
 	
 		
 	
-	<form>
-		
-	</form>
+	
 
 	<button  ng-click="getSearch()">getSearch</button>
 <button ng-click="log()"></button>
@@ -25,10 +23,8 @@
 		<p>{{data.category}}</p>
 		<p>{{data.item}}</p>
 		<p>{{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
-		<p>{{data.image}}</p>
-		<img ng-src={{data.image}} />
+		<img ng-src="{{data.image}}"></img>
 
-		/client/assets/carrots.png
 	</div>
 
 

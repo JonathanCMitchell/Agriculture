@@ -15,20 +15,25 @@ angular.module('app', [])
 			return response.data
 		}) //may need to add error callback here
 	}
+
+	
+
+	 
+
+
+
 	return {
 		getSearch: getSearch
 	}
 })
 
 
-.controller('SearchController', function($scope,_, SearchFactory) {
-	// $scope.data.dataLoading = false
-		
+.controller('SearchController', function($scope,_, SearchFactory) {		
 	$scope.getSearch = function() {
 		SearchFactory.getSearch()
 		.then(function(data) {
 			console.log('scope data is', data.slice(0,100))
-			data = data.slice(0,100)
+			data = data.slice(0,30)
 			$scope.dataArr = data
 			$scope.addImage()
 		})
@@ -40,16 +45,26 @@ angular.module('app', [])
 	 //if dataArr.item === 'corn'
 	 // dataArr.img = 'corn.jpg'
 
-	 var imageUrls= {
-	 	broccoli: './assets/broccoli.jpeg',
-	 	carrots: './assets/carrots.png',
-	 	goat: './assets/goat.png',
-	 	honey: './assets/honey.png',
-	 	peppers: './assets/peppers.jpeg'
-	 }
+	
 
+
+		 var imageUrls= {
+		 	"broccoli": "./assets/broccoli.png",
+		 	"carrots": "./assets/carrots.png",
+		 	"goat": "./assets/goat.png",
+		 	"honey": "./assets/honey.png",
+		 	"pepper": "./assets/pepper.png",
+		 	"hay": "./assets/hay.png",
+		 	"potatoes": "./assets/potatoes.png",
+		 	"pasture": "./assets/pasture.png",
+		 	"poultry" : "./assets/poultry.png",
+		 	"tobacco":"./assets/tobacco.png",
+		 	"corn": "./assets/corn.png"
+	 	}
+
+	 
 	 $scope.addImage = function() {
-	 	_.each($scope.dataArr, function(dataObj) {
+	 	$scope.dataArr.forEach(function(dataObj) {
 	 		if (imageUrls[dataObj.item] !== undefined) {
 	 			dataObj.image = imageUrls[dataObj.item]
 	 		}  else {
@@ -59,6 +74,8 @@ angular.module('app', [])
 	 		console.log('dataImage afer imageprop', dataObj.image)
 	 	})
 	 }
+
+
 
 	 $scope.log = function() {
 	 	console.log('inside log',$scope.data.image)
