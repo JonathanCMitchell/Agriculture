@@ -6,16 +6,23 @@
 <body ng-app="app">
 <h1>YOYOYO</h1>
 <div ng-controller="SearchController">
-	<pre>{{data}}</pre>
-<!-- 	<form ng-submit="filterResults">
+	
 		
-	</form> -->
+	
+	<form>
+		
+	</form>
 
 	<button ng-click=getSearch()>getSearch</button>
 	
+	<!-- 	<div ng-if="data.dataLoading">
+			Loading...
+		</div> -->
 
-
-
+	<!-- <div ng-repeat="data in dataArr">
+		{data.}
+	</div> -->
+	<pre>{{dataArr}}</pre>
 
 </div>
 

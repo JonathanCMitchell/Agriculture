@@ -19,12 +19,15 @@ angular.module('app', [])
 })
 
 .controller('SearchController', function($scope, SearchFactory) {
+	// $scope.data.dataLoading = false
 	$scope.hello = 'hello world';	
 	$scope.getSearch = function() {
+			// $scope.data.dataLoading = true
 		SearchFactory.getSearch()
 		.then(function(data) {
-			console.log('scope data is', data)
-			$scope.data = data
+			console.log('scope data is', data.slice(0,100))
+			$scope.dataArr = data.slice(0,100)
+			// $scope.data.dataLoading = false
 		})
 	}
 
