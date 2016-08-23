@@ -13,15 +13,19 @@
 		
 	</form>
 
-	<button ng-click=getSearch()>getSearch</button>
+	<button  ng-click=getSearch()>getSearch</button>
 	
 	<!-- 	<div ng-if="data.dataLoading">
 			Loading...
 		</div> -->
 
-	<!-- <div ng-repeat="data in dataArr">
-		{data.}
-	</div> -->
+	<div ng-repeat="data in dataArr">
+		<h3>{{data.business}}</h3>
+		<p>{{data.category}}</p>
+		<p>{{data.item}}</p>
+		<p>{{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
+	</div>
+	
 	<pre>{{dataArr}}</pre>
 
 </div>

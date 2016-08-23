@@ -26,7 +26,8 @@ angular.module('app', [])
 		SearchFactory.getSearch()
 		.then(function(data) {
 			console.log('scope data is', data.slice(0,100))
-			$scope.dataArr = data.slice(0,100)
+			data = data.slice(0,100)
+			$scope.dataArr = data
 			// $scope.data.dataLoading = false
 		})
 	}

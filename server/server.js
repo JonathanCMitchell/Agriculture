@@ -16,7 +16,7 @@ app.use(express.static('./client'))
 // url = 'https://data.ct.gov/resource/y6p2-px98.json'
 
 app.get('/api/search', function(req,res) {
-	console.log('inside /api/search get req.query is ', req.query)
+	console.log('we are in searchGet')
 	request.get('https://data.ct.gov/resource/y6p2-px98.json', function(error, response,body) {
 		if (error) {
 			console.error('error in server /api/search', error)
