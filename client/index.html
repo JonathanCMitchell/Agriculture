@@ -3,10 +3,26 @@
 <head>
 	<title></title>
 </head>
-<body>
+<body ng-app="app">
 <h1>YOYOYO</h1>
+<div ng-controller="SearchController">
+	<pre>{{data}}</pre>
+<!-- 	<form ng-submit="filterResults">
+		
+	</form> -->
+
+	<button ng-click=getSearch()>getSearch</button>
+	
+
+
+
+
+</div>
+
+
+
 <script src="./lib/angular/angular.min.js"></script>
 <script src="./lib/underscore/underscore-min.js"></script>
-
+<script src="./app/app.js"></script>
 </body>
 </html>
