@@ -12,23 +12,17 @@
 	
 
 	<button  ng-click="getSearch()">getSearch</button>
-<button ng-click="log()"></button>
-	
-		<form>
-			<input ng-model="filterText" placeholder="search for food"/>
-		</form>
-
+	<button ng-click="log()"></button>
+	<form>
+		<input ng-model="filterText" placeholder="search for food"/>
+	</form>
 	<div ng-repeat="data in dataArr | filter: filterText">
 		<h3>{{data.business}}</h3>
 		<p>{{data.category}}</p>
 		<p>{{data.item}}</p>
 		<p>{{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
 		<img ng-src="{{data.image}}"></img>
-
 	</div>
-
-
-
 </div>
 
 

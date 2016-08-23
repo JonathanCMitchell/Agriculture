@@ -13,14 +13,11 @@ angular.module('app', [])
 		.then(function(response) {
 			console.log('in SearchFactory successful get response is', response)
 			return response.data
+		})
+		.catch(function(error) {
+			console.error('we have an error in searchfactory get', error)
 		}) //may need to add error callback here
 	}
-
-	
-
-	 
-
-
 
 	return {
 		getSearch: getSearch
@@ -39,14 +36,6 @@ angular.module('app', [])
 		})
 	}
 
-	//add property to dataArr's objects
-	 //loop through dataArr
-
-	 //if dataArr.item === 'corn'
-	 // dataArr.img = 'corn.jpg'
-
-	
-
 
 		 var imageUrls= {
 		 	"broccoli": "./assets/broccoli.png",
@@ -59,14 +48,17 @@ angular.module('app', [])
 		 	"pasture": "./assets/pasture.png",
 		 	"poultry" : "./assets/poultry.png",
 		 	"tobacco":"./assets/tobacco.png",
-		 	"corn": "./assets/corn.png"
+		 	"corn": "./assets/corn.png",
+		 	"garlic": "./assets/garlic.jpeg",
+		 	"herbs": "./assets/herbs.jpeg",
+		 	"straw": "./assets/straw.jpeg"
 	 	}
 
 	 
 	 $scope.addImage = function() {
 	 	$scope.dataArr.forEach(function(dataObj) {
-	 		if (imageUrls[dataObj.item] !== undefined) {
-	 			dataObj.image = imageUrls[dataObj.item]
+	 		if (imageUrls[dataObj.item.toLowerCase()] !== undefined) {
+	 			dataObj.image = imageUrls[dataObj.item.toLowerCase()]
 	 		}  else {
 	 			dataObj.image = './assets/default.png'
 	 		}
