@@ -1,0 +1,28 @@
+{
+  "name": "k",
+  "version": "1.0.0",
+  "description": "## Goals: Create a Agricultural Commodities App that displays and interacts with produce data returned from the Connecticut Agricultural Commodity API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanCMitchell/MKS-LA-assessment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanCMitchell/MKS-LA-assessment/issues"
+  },
+  "homepage": "https://github.com/JonathanCMitchell/MKS-LA-assessment#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2",
+    "request": "^2.74.0",
+    "underscore": "^1.8.3"
+  }
+}
