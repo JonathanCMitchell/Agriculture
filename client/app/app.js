@@ -33,6 +33,10 @@ angular.module('app', [])
 			data = data.slice(0,30)
 			$scope.dataArr = data
 			$scope.addImage()
+			$scope.noData=false;
+			$scope.cats = $scope.dataArr.map(function(dataObj) {
+				return dataObj.category
+			})
 		})
 	}
 
@@ -51,7 +55,11 @@ angular.module('app', [])
 		 	"corn": "./assets/corn.png",
 		 	"garlic": "./assets/garlic.jpeg",
 		 	"herbs": "./assets/herbs.jpeg",
-		 	"straw": "./assets/straw.jpeg"
+		 	"straw": "./assets/straw.jpeg",
+		 	"horses": "./assets/horses.jpeg",
+		 	"apples": "./assets/apples.jpeg",
+		 	"pumpkins": "./assets/pumpkins.jpeg",
+		 	"sheep": "./assets/sheep.jpeg"
 	 	}
 
 	 
@@ -63,15 +71,76 @@ angular.module('app', [])
 	 			dataObj.image = './assets/default.png'
 	 		}
 	 		console.log('dataObj after image prop', dataObj)
-	 		console.log('dataImage afer imageprop', dataObj.image)
 	 	})
 	 }
 
+	 //form validation for business, address, category, foodname
 
 
-	 $scope.log = function() {
-	 	console.log('inside log',$scope.data.image)
-	 }
+	// $scope.checkForData = function() {
+	//  	if (!$scope.dataArr) {
+	//  		console.log("there is no dataArr")
+	//  		$scope.noData = true
+	//  	}
+	//  	else if ($scope.dataArr) {
+	//  		$scope.dataArr.forEach(function(dataObj) {
+	//  			console.log('we are in checkfordata')
+	//  			console.log('filterText is', $scope.filterText)
+	//  			console.log('scopeDataObj', dataObj)
+	//  			if (dataObj.business !== undefined) {
+	//  				console.log('dataObj.business: ', dataObj.business)
+	//  				if (dataObj.business.indexOf($scope.filterText) === -1) {
+	//  					console.log('business invalid')
+	//  					$scope.noData = true
+	//  				}
+	//  			}
+	//  			else {
+	//  				$scope.noData = false
+	//  			}
+	//  		})
+	//  	}
+	// }
+
+	
+
+	// $scope.log = function() {
+	// 	$scope.props = $scope.dataArr.map(function(dataObj) {
+	// 	return {
+	// 	business: dataObj.business,
+	// 	category: dataObj.category,
+	// 	city: dataObj.location_1_city,
+	// 	state: dataObj.location_1_state,
+	// 	zipcode: dataObj.zipcode,
+	// 	foodname: dataObj.item,
+	// 	}
+	// })
+
+	
+	
+
+
+// $scope.props = $scope.dataArr.map(function(dataObj) {
+// 			return {
+// 				category: dataObj.category,
+// 				city: dataObj.location_1_city,
+// 				state: dataObj.location_1_state,
+// 				zipcode: dataObj.zipcode,
+// 				foodname: dataObj.item,
+// 				}
+// 			}
+// 		})
+
+
+$scope.checkForData = function() {
+	$scope.noData = false
+	if (!_.contains($scope.cats, $scope.filterText)) {
+		$scope.noData = true
+	}
+}
+
+
+//make an array of [business names, address, category, foodname]
+// check form validation against those
 
 	
 
