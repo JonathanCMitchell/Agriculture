@@ -38,6 +38,11 @@ angular.module('app', [])
 			$scope.cats = $scope.dataArr.map(function(dataObj) {
 				return dataObj.category
 			})
+			$scope.dataArr.forEach(function(dataObj) {
+				if (dataObj.business === undefined) {
+					dataObj.business = 'not listed'
+				}
+			})
 			$scope.loading = false
 		})
 	}

@@ -10,12 +10,12 @@
 <div class="container-fluid">
 <div class="row">
 <div ng-controller="SearchController" ng-init="getSearch()">
-	<div class="col-md-offset-4 col-md-2" ng-show="loading">
+	<div class="col-md-offset-5 col-md-2" ng-show="loading">
 	<h1 class="text-center">Loading...</h1>
 	<img src="./assets/loading.png"/>
 </div>
 <div class="col-md-6 col-md-offset-4 container">
-		<form class="col-md-6 col-md-offset-5" name="filterData">
+		<form class="col-md-6 col-md-offset-2" name="filterData">
 	<p ng-if="noData">Please enter a valid category</p>
 		<input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search food category"/>
 	<form>
@@ -23,7 +23,7 @@
 
 
 
-	<div class="col-md-4" ng-repeat="data in dataArr | filter: filterText">
+	<div class="col-md-4" id="repeatBox" ng-repeat="data in dataArr | filter: filterText">
 		<h3>Title: {{data.business}}</h3>
 		<p>Category: {{data.category}}</p>
 		<p>Item: {{data.item}}</p>
@@ -38,9 +38,6 @@
 
 
 
-
-
-<!-- end of form guide  -->
 
 <script src="./lib/angular/angular.min.js"></script>
 <script src="./lib/angular-animate/angular-animate.min.js"></script>

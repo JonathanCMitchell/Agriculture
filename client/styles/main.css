@@ -1,0 +1,12 @@
+.container-fluid {
+	background-color: #fff;
+}
+
+#repeat-box {
+	background-color: #fff;
+}
+
+input {
+	margin: 17px;
+	padding: 12px;
+}
