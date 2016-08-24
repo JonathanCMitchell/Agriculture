@@ -10,21 +10,24 @@
 <div class="container-fluid">
 <div class="row">
 <div ng-controller="SearchController" ng-init="getSearch()">
-	<div class="col-offset-md-4 col-md-2" ng-show="loading">Data is loading
+	<div class="col-md-offset-4 col-md-2" ng-show="loading">
+	<h1 class="text-center">Loading...</h1>
 	<img src="./assets/loading.png"/>
 </div>
-		<md-form class="col-md-6 col-md-offset-5" name="filterData">
-		<md-input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search food category"/>
-	</md-form>
-	<h1 class="col-md-6 col-md-offset-5" ng-if="noData">Please enter a valid category</h1>
+<div class="col-md-6 col-md-offset-4 container">
+		<form class="col-md-6 col-md-offset-5" name="filterData">
+	<p ng-if="noData">Please enter a valid category</p>
+		<input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search food category"/>
+	<form>
+</div>
 
 
 
 	<div class="col-md-4" ng-repeat="data in dataArr | filter: filterText">
-		<h3>{{data.business}}</h3>
-		<p>{{data.category}}</p>
-		<p>{{data.item}}</p>
-		<p>{{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
+		<h3>Title: {{data.business}}</h3>
+		<p>Category: {{data.category}}</p>
+		<p>Item: {{data.item}}</p>
+		<p>Address: {{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
 		<img ng-src="{{data.image}}"></img>
 	</div>
 </div>
@@ -44,10 +47,10 @@
 <script src="./lib/angular-aria/angular-aria.min.js"></script>
 <script src="./lib/angular-messages/angular-messages.min.js"></script>
 <script src="./lib/angular-material/angular-material.min.js"></script>
+<script src="./lib/underscore/underscore-min.js"></script>
 <!-- app -->
 <script src="./app/app.js"></script>
 <script src="./lib/jquery/dist/jquery.min.js"></script>
 <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./lib/underscore/underscore-min.js"></script>
 </body>
 </html>

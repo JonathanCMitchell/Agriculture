@@ -79,9 +79,14 @@ angular.module('app', [])
 
 	
 		$scope.checkForData = function() {
-			$scope.noData = false
-			if (!_.contains($scope.cats, $scope.filterText)) {
+			console.log('scope cats', $scope.cats)
+			console.log('scopefiltertext', $scope.filterText)
+			if ($scope.cats !== undefined) {
 				$scope.noData = true
+			if (_.contains($scope.cats, $scope.filterText)) {
+				console.log("we hit contains")
+				$scope.noData = false
+			}
 			}
 		}
 
