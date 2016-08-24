@@ -25,10 +25,10 @@
 
 
 	<div class="col-md-4" id="repeatBox" ng-repeat="data in dataArr | filter: filterText">
-		<h3>Title: {{data.business}}</h3>
+		<h3>Business: {{data.business}}</h3>
 		<p>Category: {{data.category}}</p>
 		<p>Item: {{data.item}}</p>
-		<p>Address: {{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
+		<p>Address: {{data.location_1_location}} {{data.location_1_city}} {{data.location_1_state}} {{data.zipcode}}</p>
 		<img ng-src="{{data.image}}"></img>
 	</div>
 </div>
