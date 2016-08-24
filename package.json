@@ -20,6 +20,7 @@
   "homepage": "https://github.com/JonathanCMitchell/MKS-LA-assessment#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "nodemon": "^1.10.2",
