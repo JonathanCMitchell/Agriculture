@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<link rel="stylesheet" type="text/css" href="./lib/angular-material/angular-material.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/main.css" />
 	<title></title>
 </head>
 <body ng-app="app">
 <h1>YOYOYO</h1>
+<div class="container-fluid">
+<div class="row">
 <div ng-controller="SearchController" ng-init="getSearch()">
-	<div ng-show="loading">Data is loading
+	<div class="col-offset-md-4 col-md-2" ng-show="loading">Data is loading
 	<img src="./assets/loading.png"/>
 </div>
 		
@@ -19,7 +24,9 @@
 	</form>
 	<p ng-if="noData">Please enter a valid category</p>
 
-	<div ng-repeat="data in dataArr | filter: filterText">
+
+
+	<div class="col-md-4" ng-repeat="data in dataArr | filter: filterText">
 		<h3>{{data.business}}</h3>
 		<p>{{data.category}}</p>
 		<p>{{data.item}}</p>
@@ -27,48 +34,26 @@
 		<img ng-src="{{data.image}}"></img>
 	</div>
 </div>
+</div>
 
 
 
 
-<!-- 
-<md-card class="text-center">
-  <md-card-title class="text-center">
-    <md-card-title-text>
-      <span class="md-headline">Welcome To Reddit Search</span>
-      <span class="md-subhead">Enter in your search.</span>
-    </md-card-title-text>
-  </md-card-title>
-  <md-card-content class="flexbox-parent">
-    <div layout="row" layout-align="center center">
-      <md-input-container id=mdInputFix flex=20>
-        <form name="searchData" ng-submit=getData()>
-          <input id="searchData" ng-model="search.searchTerm" placeholder="enter search term" ng-change="addSelection()" ></input>
-          <md-button ng-click="getData()">Search</md-button>
-        </form>
-      </md-input-container>
-      <md-input-container flex=20>
-        <input ng-model="filterText"  placeholder="filter results"> </input>
-      </md-input-container>
-      <md-input-container flex=20>
-        <label for="repeatSelect">page</label>
-        <md-select name="repeatSelect" id="repeatSelect" ng-model="dataa.model" ng-change="updateSearchObjAndGetData()"  >
-          <md-option ng-repeat="option in dataa.availableOptions" value="{{option.id}}" >
-            {{option.name}}</md-option>
-          </md-select>
-        </md-input-container>
-      </div>
-    </div>
-  </md-card-content>
-</md-card> -->
+
+
 
 
 <!-- end of form guide  -->
 
-
-
-<script src="./lib/underscore/underscore-min.js"></script>
 <script src="./lib/angular/angular.min.js"></script>
+<script src="./lib/angular-animate/angular-animate.min.js"></script>
+<script src="./lib/angular-aria/angular-aria.min.js"></script>
+<script src="./lib/angular-messages/angular-messages.min.js"></script>
+<script src="./lib/angular-material/angular-material.min.js"></script>
+<!-- app -->
 <script src="./app/app.js"></script>
+<script src="./lib/jquery/dist/jquery.min.js"></script>
+<script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./lib/underscore/underscore-min.js"></script>
 </body>
 </html>

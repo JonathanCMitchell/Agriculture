@@ -8,7 +8,7 @@ var _ = require('underscore')
 
 app.use(cors())
 app.use(bodyParser.json({limit: '50mb'}))
-app.use(express.static('./client'))
+app.use(express.static(__dirname + '/../client/'))
 
 
 
@@ -29,7 +29,7 @@ app.get('/api/search', function(req,res) {
 
 
 
-app.set('port', 3000 || env.process.PORT)
+app.set('port', process.env.PORT || 3000)
 app.listen(app.get('port'), function() {
 	console.log('we are listening on',app.get('port'))
 })
