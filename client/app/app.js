@@ -31,7 +31,7 @@ angular.module('app', [])
 		SearchFactory.getSearch()
 		.then(function(data) {
 			console.log('scope data is', data.slice(0,100))
-			data = data.slice(0,200)
+			data = data.slice(0,100)
 			$scope.dataArr = data
 			$scope.addImage()
 			$scope.noData=false;
