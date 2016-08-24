@@ -75,7 +75,7 @@ angular.module('app', [])
 	 		if (imageUrls[dataObj.item.toLowerCase()] !== undefined) {
 	 			dataObj.image = imageUrls[dataObj.item.toLowerCase()]
 	 		}  else {
-	 			dataObj.image = './assets/default.png'
+	 			dataObj.image = './assets/defaultt.png'
 	 		}
 	 	})
 	 }
