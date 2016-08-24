@@ -8,7 +8,7 @@ var _ = require('underscore')
 
 app.use(cors())
 app.use(bodyParser.json({limit: '50mb'}))
-app.use(express.static(__dirname + '/../client/'))
+app.use(express.static('./client/'))
 
 
 
