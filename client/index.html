@@ -5,8 +5,8 @@
 </head>
 <body ng-app="app">
 <h1>YOYOYO</h1>
-<div ng-controller="SearchController">
-	
+<div ng-controller="SearchController" ng-init="getSearch()">
+	<div ng-show="loading">Data is loading</div>
 		
 	
 	<button ng-click = "checkForData()"></button>
@@ -15,7 +15,7 @@
 	<form name="filterData">
 		<input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search for food"/>
 	</form>
-	<p ng-if="noData">NO DATA TO BE SEEN HERE</p>
+	<p ng-if="noData">Please enter a valid category</p>
 
 	<div ng-repeat="data in dataArr | filter: filterText">
 		<h3>{{data.business}}</h3>
