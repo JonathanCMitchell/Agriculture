@@ -72,7 +72,6 @@ angular.module('app', [])
 	 		}  else {
 	 			dataObj.image = './assets/default.png'
 	 		}
-	 		console.log('dataObj after image prop', dataObj)
 	 	})
 	 }
 

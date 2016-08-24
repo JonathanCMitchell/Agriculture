@@ -6,14 +6,16 @@
 <body ng-app="app">
 <h1>YOYOYO</h1>
 <div ng-controller="SearchController" ng-init="getSearch()">
-	<div ng-show="loading">Data is loading</div>
+	<div ng-show="loading">Data is loading
+	<img src="./assets/loading.png"/>
+</div>
 		
 	
 	<button ng-click = "checkForData()"></button>
 
 	<button  ng-click="getSearch()">getSearch</button>
 	<form name="filterData">
-		<input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search for food"/>
+		<input id="filterData" ng-change="checkForData()" ng-model="filterText" placeholder="search food category"/>
 	</form>
 	<p ng-if="noData">Please enter a valid category</p>
 
